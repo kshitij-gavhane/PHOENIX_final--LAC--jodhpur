@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Participant learning progress and training dashboard for the PHOENIX demonstration.">
+  <title>PHOENIX | My Learning Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="journey-dashboard.css">
+</head>
+<body class="journey-page">
+  <header class="journey-header">
+    <div class="journey-header-inner">
+      <a class="journey-brand" href="index.html" aria-label="PHOENIX home">
+        <img src="phoenix-logo(1).png" alt="">
+        <span><strong>PHOENIX</strong><small>Participant learning portal</small></span>
+      </a>
+      <div class="journey-header-actions">
+        <span class="journey-demo-pill">DEMONSTRATION ACCOUNT</span>
+        <button class="journey-logout" id="logoutButton" type="button">Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="journey-dashboard">
+    <section class="journey-welcome" aria-labelledby="welcomeHeading">
+      <div class="journey-welcome-copy">
+        <p class="journey-eyebrow">MY LEARNING DASHBOARD <span>·</span> SAMPLE RECORD</p>
+        <h1 id="welcomeHeading">Welcome back, Himanshu</h1>
+        <p>Track your training, celebrate completed milestones, and see what to do next.</p>
+      </div>
+      <div class="journey-profile">
+        <div class="journey-avatar" aria-hidden="true">HG</div>
+        <div><strong>Himanshu Gavhane</strong><span>Participant ID: PHX-2026-0142</span><span>Pune, Maharashtra</span></div>
+        <span class="journey-status">Learning</span>
+      </div>
+    </section>
+
+    <aside class="journey-demo-note" aria-label="Demonstration data notice">
+      <span aria-hidden="true">ⓘ</span>
+      <p><strong>Sample data:</strong> This is a demonstration profile and its activity, dates, progress, and certificates are illustrative—not a live learner record.</p>
+    </aside>
+
+    <section class="journey-stat-grid" aria-label="Learning summary">
+      <article class="journey-stat-card">
+        <span class="journey-stat-icon journey-icon-blue" aria-hidden="true">▤</span>
+        <div><span class="journey-stat-label">Courses enrolled</span><strong>4</strong><small>Across 2 learning pathways</small></div>
+      </article>
+      <article class="journey-stat-card">
+        <span class="journey-stat-icon journey-icon-green" aria-hidden="true">✓</span>
+        <div><span class="journey-stat-label">Courses completed</span><strong>2</strong><small>2 certificates earned</small></div>
+      </article>
+      <article class="journey-stat-card">
+        <span class="journey-stat-icon journey-icon-orange" aria-hidden="true">◷</span>
+        <div><span class="journey-stat-label">In progress</span><strong>2</strong><small>Keep building your skills</small></div>
+      </article>
+      <article class="journey-stat-card">
+        <span class="journey-stat-icon journey-icon-purple" aria-hidden="true">◉</span>
+        <div><span class="journey-stat-label">Learning hours</span><strong>165 <small>/ 300</small></strong><small>55% of your current goal</small></div>
+      </article>
+    </section>
+
+    <div class="journey-main-grid">
+      <section class="journey-panel journey-overview" aria-labelledby="overviewHeading">
+        <div class="journey-panel-heading">
+          <div><p class="journey-eyebrow">YOUR ACTIVITY</p><h2 id="overviewHeading">Learning overview</h2></div>
+          <span class="journey-date-range">Last 6 weeks</span>
+        </div>
+        <div class="journey-overview-content">
+          <div class="journey-chart-wrap">
+            <h3>Study hours by week</h3>
+            <div class="journey-bar-chart" role="img" aria-label="Study hours over six weeks: 18, 24, 21, 32, 29, and 41 hours.">
+              <div class="journey-bar-item"><span>18h</span><div><i style="--bar-height:44%"></i></div><small>Week 1</small></div>
+              <div class="journey-bar-item"><span>24h</span><div><i style="--bar-height:59%"></i></div><small>Week 2</small></div>
+              <div class="journey-bar-item"><span>21h</span><div><i style="--bar-height:51%"></i></div><small>Week 3</small></div>
+              <div class="journey-bar-item"><span>32h</span><div><i style="--bar-height:78%"></i></div><small>Week 4</small></div>
+              <div class="journey-bar-item"><span>29h</span><div><i style="--bar-height:71%"></i></div><small>Week 5</small></div>
+              <div class="journey-bar-item"><span>41h</span><div><i style="--bar-height:100%"></i></div><small>Week 6</small></div>
+            </div>
+            <p class="journey-chart-caption">A steady learning routine helps you make progress one week at a time.</p>
+          </div>
+          <div class="journey-goal">
+            <div class="journey-goal-ring" role="img" aria-label="55 percent of the 300-hour learning goal completed"><div><strong>55%</strong><span>completed</span></div></div>
+            <h3>Hours toward your goal</h3>
+            <p><strong>165 hours</strong> completed of 300 planned hours</p>
+            <div class="journey-goal-track" aria-hidden="true"><span></span></div>
+            <small>135 hours remaining</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey-panel journey-skills" aria-labelledby="skillsHeading">
+        <div class="journey-panel-heading">
+          <div><p class="journey-eyebrow">SKILLS YOU'RE BUILDING</p><h2 id="skillsHeading">Skill development</h2></div>
+        </div>
+        <div class="journey-skill-row"><div><span>Digital literacy</span><strong>80%</strong></div><div class="journey-skill-track"><i style="--skill-value:80%"></i></div></div>
+        <div class="journey-skill-row"><div><span>Communication</span><strong>72%</strong></div><div class="journey-skill-track"><i style="--skill-value:72%"></i></div></div>
+        <div class="journey-skill-row"><div><span>Workplace readiness</span><strong>64%</strong></div><div class="journey-skill-track"><i style="--skill-value:64%"></i></div></div>
+        <div class="journey-skill-row"><div><span>Customer service</span><strong>58%</strong></div><div class="journey-skill-track"><i style="--skill-value:58%"></i></div></div>
+        <p class="journey-footnote">Skills are illustrative indicators for this demo, not a formal assessment.</p>
+      </section>
+    </div>
+
+    <section class="journey-panel journey-courses" aria-labelledby="coursesHeading">
+      <div class="journey-panel-heading">
+        <div><p class="journey-eyebrow">KEEP MOVING FORWARD</p><h2 id="coursesHeading">Your courses</h2></div>
+        <a href="index.html#courses" class="journey-text-link">Explore skill pathways <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="journey-course-grid">
+        <article class="journey-course-card">
+          <div class="journey-course-top"><span class="journey-course-icon">01</span><span class="journey-course-status is-active">In progress</span></div>
+          <p class="journey-course-category">DIGITAL SKILLS · 40 HOURS</p>
+          <h3>Computer &amp; Digital Fundamentals</h3>
+          <p class="journey-course-copy">Build confidence with computer basics, online safety, documents, and everyday digital tools.</p>
+          <div class="journey-course-progress"><div><span>Course progress</span><strong>75%</strong></div><div class="journey-skill-track"><i style="--skill-value:75%"></i></div></div>
+          <p class="journey-course-next"><strong>Next:</strong> Complete the spreadsheet basics module</p>
+        </article>
+        <article class="journey-course-card">
+          <div class="journey-course-top"><span class="journey-course-icon journey-course-icon-green">02</span><span class="journey-course-status is-complete">Completed</span></div>
+          <p class="journey-course-category">WORKPLACE SKILLS · 30 HOURS</p>
+          <h3>Communication &amp; Workplace Readiness</h3>
+          <p class="journey-course-copy">Practise clear communication, teamwork, interview preparation, and professional habits.</p>
+          <div class="journey-course-progress"><div><span>Course progress</span><strong>100%</strong></div><div class="journey-skill-track"><i style="--skill-value:100%"></i></div></div>
+          <p class="journey-course-next"><strong>Completed:</strong> Certificate issued 18 Sep 2026</p>
+        </article>
+        <article class="journey-course-card">
+          <div class="journey-course-top"><span class="journey-course-icon journey-course-icon-purple">03</span><span class="journey-course-status is-active">In progress</span></div>
+          <p class="journey-course-category">EMPLOYABILITY · 35 HOURS</p>
+          <h3>Customer Service Essentials</h3>
+          <p class="journey-course-copy">Learn active listening, customer support, problem solving, and service etiquette.</p>
+          <div class="journey-course-progress"><div><span>Course progress</span><strong>40%</strong></div><div class="journey-skill-track"><i style="--skill-value:40%"></i></div></div>
+          <p class="journey-course-next"><strong>Next:</strong> Start the handling enquiries lesson</p>
+        </article>
+        <article class="journey-course-card">
+          <div class="journey-course-top"><span class="journey-course-icon journey-course-icon-orange">04</span><span class="journey-course-status is-complete">Completed</span></div>
+          <p class="journey-course-category">DIGITAL SKILLS · 25 HOURS</p>
+          <h3>Online Safety &amp; Digital Citizenship</h3>
+          <p class="journey-course-copy">Understand privacy, safe browsing, responsible online communication, and digital wellbeing.</p>
+          <div class="journey-course-progress"><div><span>Course progress</span><strong>100%</strong></div><div class="journey-skill-track"><i style="--skill-value:100%"></i></div></div>
+          <p class="journey-course-next"><strong>Completed:</strong> Certificate issued 02 Sep 2026</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="journey-bottom-grid">
+      <section class="journey-panel" aria-labelledby="certificateHeading">
+        <div class="journey-panel-heading"><div><p class="journey-eyebrow">YOUR ACHIEVEMENTS</p><h2 id="certificateHeading">Certificates</h2></div><span class="journey-count-pill">2 earned</span></div>
+        <ul class="journey-certificate-list">
+          <li>
+            <span class="journey-certificate-icon" aria-hidden="true">✓</span>
+            <div class="journey-certificate-info"><strong>Communication &amp; Workplace Readiness</strong><span>Completed 18 Sep 2026 · Demo certificate</span></div>
+            <button class="journey-certificate-view" type="button" data-course="Communication &amp; Workplace Readiness" data-date="18 September 2026" data-hours="30" data-id="PHX-DEMO-2026-0918">View certificate <span aria-hidden="true">↗</span></button>
+          </li>
+          <li>
+            <span class="journey-certificate-icon" aria-hidden="true">✓</span>
+            <div class="journey-certificate-info"><strong>Online Safety &amp; Digital Citizenship</strong><span>Completed 02 Sep 2026 · Demo certificate</span></div>
+            <button class="journey-certificate-view" type="button" data-course="Online Safety &amp; Digital Citizenship" data-date="02 September 2026" data-hours="25" data-id="PHX-DEMO-2026-0902">View certificate <span aria-hidden="true">↗</span></button>
+          </li>
+        </ul>
+      </section>
+      <section class="journey-panel" aria-labelledby="nextHeading">
+        <div class="journey-panel-heading"><div><p class="journey-eyebrow">YOUR NEXT STEPS</p><h2 id="nextHeading">Coming up</h2></div></div>
+        <ol class="journey-timeline">
+          <li><span class="journey-timeline-dot"></span><div><strong>Finish spreadsheet basics</strong><p>Continue Computer &amp; Digital Fundamentals</p><time datetime="2026-10-14">14 Oct · Learning activity</time></div></li>
+          <li><span class="journey-timeline-dot"></span><div><strong>Check in with your mentor</strong><p>Review progress and ask for support if needed</p><time datetime="2026-10-17">17 Oct · Guidance session</time></div></li>
+          <li><span class="journey-timeline-dot"></span><div><strong>Continue customer service lessons</strong><p>Practise handling customer enquiries</p><time datetime="2026-10-20">20 Oct · Learning activity</time></div></li>
+        </ol>
+      </section>
+    </div>
+
+    <footer class="journey-footer">
+      <p>This dashboard is a UI demonstration. In a live service, records must come from an authorised, secure learner information system.</p>
+      <a href="index.html">Return to PHOENIX home</a>
+    </footer>
+  </main>
+
+  <dialog class="journey-certificate-dialog" id="certificateDialog" aria-labelledby="certificateTitle">
+    <div class="journey-certificate-dialog-actions">
+      <button class="journey-certificate-print" id="printCertificate" type="button">Print certificate</button>
+      <button class="journey-certificate-close" id="closeCertificate" type="button" aria-label="Close certificate">×</button>
+    </div>
+    <article class="journey-certificate-paper">
+      <div class="journey-certificate-inner">
+        <div class="journey-certificate-brand">
+          <img src="phoenix-logo(1).png" alt="PHOENIX logo">
+          <span>PROJECT PHOENIX<br><small>SKILLS · LEARNING · OPPORTUNITY</small></span>
+        </div>
+        <p class="journey-certificate-kicker">CERTIFICATE OF COMPLETION</p>
+        <h2 id="certificateTitle">Certificate of Achievement</h2>
+        <p class="journey-certificate-presented">This certificate is presented to</p>
+        <p class="journey-certificate-recipient">Himanshu Gavhane</p>
+        <p class="journey-certificate-copy">for successfully completing the learning programme</p>
+        <p class="journey-certificate-course" id="certificateCourse"></p>
+        <p class="journey-certificate-copy">demonstrating commitment to learning and skill development.</p>
+        <div class="journey-certificate-details">
+          <div><span>DATE OF COMPLETION</span><strong id="certificateDate"></strong></div>
+          <div><span>LEARNING HOURS</span><strong id="certificateHours"></strong></div>
+        </div>
+        <div class="journey-certificate-signatures">
+          <div><span class="journey-certificate-signature">PHOENIX</span><span>Learning Programme</span></div>
+          <div><span class="journey-certificate-signature">DEMO</span><span>Sample Record</span></div>
+        </div>
+        <p class="journey-certificate-id">Certificate ID: <span id="certificateId"></span></p>
+        <span class="journey-certificate-watermark" aria-hidden="true">DEMO</span>
+      </div>
+    </article>
+    <p class="journey-certificate-disclaimer">Illustrative demonstration certificate only. It is not an official credential or proof of qualification.</p>
+  </dialog>
+
+  <script>
+    if (sessionStorage.getItem('phoenixJuvenileAuth') !== 'true') {
+      window.location.replace('juvenile-login.html');
+    }
+
+    var selectedOpportunity = sessionStorage.getItem('phoenixSelectedOpportunity');
+    if (selectedOpportunity) {
+      var opportunityNotice = document.createElement('aside');
+      opportunityNotice.className = 'journey-opportunity-note';
+      opportunityNotice.setAttribute('aria-label', 'Selected opportunity');
+
+      var opportunityCopy = document.createElement('p');
+      opportunityCopy.textContent = 'You selected ' + selectedOpportunity + '. Discuss any real referral with your assigned officer. No application was submitted; this is a demonstration only.';
+
+      var clearOpportunity = document.createElement('button');
+      clearOpportunity.type = 'button';
+      clearOpportunity.textContent = 'Clear selection';
+      clearOpportunity.addEventListener('click', function () {
+        sessionStorage.removeItem('phoenixSelectedOpportunity');
+        opportunityNotice.remove();
+      });
+
+      opportunityNotice.append(opportunityCopy, clearOpportunity);
+      document.querySelector('.journey-demo-note').after(opportunityNotice);
+    }
+
+    var certificateDialog = document.getElementById('certificateDialog');
+    var lastCertificateTrigger = null;
+
+    document.querySelectorAll('.journey-certificate-view').forEach(function (button) {
+      button.addEventListener('click', function () {
+        lastCertificateTrigger = button;
+        document.getElementById('certificateCourse').textContent = button.dataset.course;
+        document.getElementById('certificateDate').textContent = button.dataset.date;
+        document.getElementById('certificateHours').textContent = button.dataset.hours + ' hours';
+        document.getElementById('certificateId').textContent = button.dataset.id;
+        certificateDialog.showModal();
+      });
+    });
+
+    document.getElementById('closeCertificate').addEventListener('click', function () {
+      certificateDialog.close();
+    });
+
+    document.getElementById('printCertificate').addEventListener('click', function () {
+      window.print();
+    });
+
+    certificateDialog.addEventListener('click', function (event) {
+      if (event.target === certificateDialog) {
+        certificateDialog.close();
+      }
+    });
+
+    certificateDialog.addEventListener('close', function () {
+      if (lastCertificateTrigger) {
+        lastCertificateTrigger.focus();
+      }
+    });
+
+    document.getElementById('logoutButton').addEventListener('click', function () {
+      sessionStorage.removeItem('phoenixJuvenileAuth');
+      window.location.replace('juvenile-login.html');
+    });
+  </script>
+</body>
+</html>

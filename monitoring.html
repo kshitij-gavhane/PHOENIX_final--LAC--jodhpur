@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PHOENIX | Monitoring & Follow-Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body> <!-- ============================================================
+         PHOENIX ADMIN / MONITORING & FOLLOW-UP
+         ============================================================ -->
+    <section class="phoenix-admin-section" id="monitoring">
+        <div class="container admin-container">
+            <div class="admin-hero">
+                <div style="display:flex;align-items:center;gap:14px"><img src="phoenix-logo(1).png" alt="PHOENIX logo"
+                        style="width:72px;height:72px;object-fit:contain">
+                    <div>
+                        <span class="section-label">PHOENIX ADMIN</span>
+                        <h2>Monitoring &amp; Follow-Up</h2>
+                        <p>Supervise rehabilitation progress, scheduled reviews, student monitoring and reintegration
+                            support through one accountable workflow.</p>
+                    </div>
+                </div>
+                <div class="admin-status-pill"><span class="admin-live-dot"></span> Monitoring system active</div>
+            </div>
+
+            <div class="admin-overview-grid">
+                <div class="admin-stat-card"><span class="admin-stat-icon">◉</span>
+                    <div><strong>24</strong><small>Children monitored</small></div>
+                </div>
+                <div class="admin-stat-card"><span class="admin-stat-icon">✓</span>
+                    <div><strong>18</strong><small>Reviews completed</small></div>
+                </div>
+                <div class="admin-stat-card warning"><span class="admin-stat-icon">!</span>
+                    <div><strong>03</strong><small>Reviews due</small></div>
+                </div>
+                <div class="admin-stat-card"><span class="admin-stat-icon">↗</span>
+                    <div><strong>12</strong><small>Student partners active</small></div>
+                </div>
+            </div>
+
+            <div class="admin-dashboard-grid">
+                <div class="admin-panel admin-child-panel">
+                    <div class="admin-panel-heading">
+                        <div><span class="panel-kicker">01 · CHILD MONITORING PROFILE</span>
+                            <h3>PHX-XXXX</h3>
+                        </div>
+                        <span class="admin-chip green">Active monitoring</span>
+                    </div>
+                    <div class="child-profile-top">
+                        <div class="child-avatar">P</div>
+                        <div><strong>Child ID: PHX-XXXX</strong>
+                            <p>Age 18 · Current Stage: <b>Training</b></p>
+                        </div>
+                    </div>
+                    <div class="admin-detail-grid">
+                        <div><span>Assigned Probation Officer</span><strong>[Name]</strong></div>
+                        <div><span>Monitoring Partner</span><strong>[Law Student ID]</strong></div>
+                        <div><span>Nodal Officer</span><strong>[Name]</strong></div>
+                        <div><span>Next Review</span><strong id="nextReviewDate">15 October 2026</strong></div>
+                    </div>
+                    <div class="review-countdown"><span>Next review automatically scheduled</span><strong
+                            id="reviewCountdown">Review date shown from the monitoring schedule</strong></div>
+                </div>
+
+                <div class="admin-panel timeline-panel">
+                    <div class="admin-panel-heading">
+                        <div><span class="panel-kicker">REHABILITATION TIMELINE</span>
+                            <h3>Journey at a glance</h3>
+                        </div>
+                    </div>
+                    <div class="rehab-timeline">
+                        <div class="timeline-step complete"><span>✓</span><small>Assessment</small></div>
+                        <div class="timeline-line active"></div>
+                        <div class="timeline-step complete"><span>✓</span><small>Training</small></div>
+                        <div class="timeline-line active"></div>
+                        <div class="timeline-step"><span>3</span><small>Release</small></div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-step"><span>4</span><small>Follow-Up</small></div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-step"><span>5</span><small>Education / Employment</small></div>
+                        <div class="timeline-line"></div>
+                        <div class="timeline-step"><span>6</span><small>Reintegration</small></div>
+                    </div>
+                    <div class="timeline-note">The next review date is generated from the predetermined monitoring
+                        interval and displayed on the child profile.</div>
+                </div>
+            </div>
+
+            <div class="admin-section-title"><span class="section-label">02 · PERIODIC REVIEW</span>
+                <h3>Feedback &amp; Review Record</h3>
+                <p>Each review brings together the child's voice, statutory supervision, training/employment feedback
+                    and the monitoring partner's observation.</p>
+            </div>
+            <div class="feedback-review-grid">
+                <article class="feedback-card child-feedback-card">
+                    <div class="feedback-card-head">
+                        <div class="feedback-icon">♥</div>
+                        <div><span>CHILD'S REVIEW</span>
+                            <h4>How is the child doing?</h4>
+                        </div>
+                    </div>
+                    <div class="feedback-questions">
+                        <label>How are you doing?<textarea
+                                placeholder="Record the child's own response..."></textarea></label>
+                        <label>Are you continuing your education / training?<select>
+                                <option>Select response</option>
+                                <option>Yes</option>
+                                <option>No</option>
+                                <option>Paused</option>
+                            </select></label>
+                        <label>Are you satisfied with your current work / training?<select>
+                                <option>Select response</option>
+                                <option>Very satisfied</option>
+                                <option>Satisfied</option>
+                                <option>Needs support</option>
+                            </select></label>
+                        <label>What difficulties are you facing?<textarea
+                                placeholder="Record difficulties reported by the child..."></textarea></label>
+                        <label>What support do you need?<textarea
+                                placeholder="Support requested by the child..."></textarea></label>
+                        <label>What are your next goals?<textarea
+                                placeholder="Child's next goals..."></textarea></label>
+                    </div>
+                </article>
+
+                <article class="feedback-card po-feedback-card">
+                    <div class="feedback-card-head">
+                        <div class="feedback-icon">◈</div>
+                        <div><span>PROBATION OFFICER'S REVIEW</span>
+                            <h4>Progress &amp; support plan</h4>
+                        </div>
+                    </div>
+                    <div class="review-check-list">
+                        <div><span>✓</span> Progress since previous review</div>
+                        <div><span>✓</span> Education / training status</div>
+                        <div><span>✓</span> Employment status</div>
+                        <div><span>✓</span> Family / community situation</div>
+                        <div><span>✓</span> Difficulties identified</div>
+                        <div><span>✓</span> Support / referrals required</div>
+                        <div><span>✓</span> Recommended next steps</div>
+                    </div>
+                    <textarea class="large-review-input" placeholder="Probation Officer review summary..."></textarea>
+                    <button class="secondary-admin-btn" type="button">Save PO Review</button>
+                </article>
+
+                <article class="feedback-card employer-feedback-card">
+                    <div class="feedback-card-head">
+                        <div class="feedback-icon">▣</div>
+                        <div><span>EMPLOYER / TRAINING PROVIDER</span>
+                            <h4>Where applicable</h4>
+                        </div>
+                    </div>
+                    <div class="provider-metrics">
+                        <div><span>Attendance</span><strong>92%</strong>
+                            <div class="mini-progress"><i style="width:92%"></i></div>
+                        </div>
+                        <div><span>Skill development</span><strong>Good</strong>
+                            <div class="mini-progress"><i style="width:78%"></i></div>
+                        </div>
+                        <div><span>Work / training performance</span><strong>Good</strong>
+                            <div class="mini-progress"><i style="width:82%"></i></div>
+                        </div>
+                        <div><span>Workplace adjustment</span><strong>Stable</strong>
+                            <div class="mini-progress"><i style="width:86%"></i></div>
+                        </div>
+                    </div>
+                    <label class="compact-label">Difficulties observed<textarea
+                            placeholder="Provider feedback..."></textarea></label>
+                    <div class="two-choice"><button type="button" class="choice-active">Continue placement /
+                            training</button><button type="button">Support required</button></div>
+                </article>
+
+                <article class="feedback-card student-feedback-card">
+                    <div class="feedback-card-head">
+                        <div class="feedback-icon">⌁</div>
+                        <div><span>LAW STUDENT MONITORING NOTE</span>
+                            <h4>Follow-up record</h4>
+                        </div>
+                    </div>
+                    <div class="student-note-grid">
+                        <label>Contact / review date<input type="date" value="2026-10-07"></label>
+                        <label>Scheduled intervention<select>
+                                <option>Completed</option>
+                                <option>Pending</option>
+                                <option>Not required</option>
+                            </select></label>
+                        <label>Current status<select>
+                                <option>Continuing education</option>
+                                <option>Continuing training</option>
+                                <option>Employment</option>
+                                <option>Not continuing</option>
+                            </select></label>
+                        <label>Follow-up / referral<select>
+                                <option>None pending</option>
+                                <option>Referral pending</option>
+                                <option>PO attention required</option>
+                            </select></label>
+                    </div>
+                    <textarea class="large-review-input"
+                        placeholder="Difficulties reported by the child / observations / issue requiring PO attention..."></textarea>
+                    <div class="role-boundary"><strong>Role boundary</strong>
+                        <p>The law student records observations and facilitates authorised follow-up. They do <b>not</b>
+                            make legal, psychological or disciplinary assessments.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="admin-workflow-banner">
+                <div><span class="panel-kicker">ACCOUNTABILITY LOOP</span>
+                    <h3>Review → Verify → Refer → Schedule Next Review</h3>
+                    <p>Every completed review moves through verification before the next scheduled follow-up is
+                        generated.</p>
+                </div>
+                <div class="workflow-arrows">
+                    <span>Review</span><b>→</b><span>Verify</span><b>→</b><span>Intervene</span><b>→</b><span>Next
+                        review</span></div>
+            </div>
+
+            <div class="admin-dashboard-grid three-cols">
+                <div class="admin-panel">
+                    <div class="admin-panel-heading">
+                        <div><span class="panel-kicker">03 · STUDENT MONITORING PARTNERS</span>
+                            <h3>Student Dashboard</h3>
+                        </div><span class="admin-chip">PHX-LS-014</span>
+                    </div>
+                    <p class="panel-description">3rd, 4th and 5th year law students may apply to become PHOENIX
+                        Monitoring Partners.</p>
+                    <div class="student-stat-grid">
+                        <div><strong>2</strong><span>Assigned Children</span></div>
+                        <div><strong>1</strong><span>Reviews Due</span></div>
+                        <div><strong>2</strong><span>Follow-ups Pending</span></div>
+                        <div><strong>8</strong><span>Reports Submitted</span></div>
+                    </div>
+                    <div class="assigned-child">
+                        <div><strong>PHX-0241</strong><span>Next review: 15 October · Status: Employment</span></div>
+                        <button type="button">View Monitoring Task</button>
+                    </div>
+                    <div class="role-list"><strong>Authorised role</strong>
+                        <p>Scheduled follow-ups · child feedback · continuity checks · reminders · flagging difficulties
+                            · authorised referrals · monitoring-record updates.</p><strong>Not authorised</strong>
+                        <p>Unnecessary case access · disclosure of identity/history · independent legal/psychological
+                            advice · unauthorised employer contact · altering rehabilitation plans.</p>
+                    </div>
+                </div>
+
+                <div class="admin-panel">
+                    <div class="admin-panel-heading">
+                        <div><span class="panel-kicker">04 · NODAL OFFICER</span>
+                            <h3>Nodal Officer Dashboard</h3>
+                        </div><span class="admin-chip blue">Supervisor</span>
+                    </div>
+                    <ul class="admin-action-list">
+                        <li>Approve student applications</li>
+                        <li>Assign students to children</li>
+                        <li>Monitor completion of reviews</li>
+                        <li>Review submitted monitoring notes</li>
+                        <li>Reassign students where necessary</li>
+                        <li>Escalate concerns to the PO</li>
+                        <li>Approve completion of monitoring tenure</li>
+                        <li>Maintain student records for certification</li>
+                    </ul>
+                    <div class="monitoring-alert"><span>!</span>
+                        <div><strong>Monitoring Alert</strong>
+                            <p>Student <b>PHX-LS-014</b> has not submitted the scheduled review for <b>PHX-0241</b>.</p>
+                        </div>
+                    </div>
+                    <p class="accountability-note">This creates accountability without turning the student into another
+                        statutory authority.</p>
+                </div>
+
+                <div class="admin-panel">
+                    <div class="admin-panel-heading">
+                        <div><span class="panel-kicker">05 · CONFIDENTIALITY &amp; CONSENT</span>
+                            <h3>Access Checklist</h3>
+                        </div><span class="admin-chip green">Required</span>
+                    </div>
+                    <p class="panel-description">Student access should be enabled only after all mandatory undertakings
+                        and applicable permissions are recorded.</p>
+                    <div class="consent-checks">
+                        <label><input type="checkbox"> Confidentiality / Non-Disclosure Undertaking</label>
+                        <label><input type="checkbox"> Child-Safeguarding Undertaking</label>
+                        <label><input type="checkbox"> Code of Conduct</label>
+                        <label><input type="checkbox"> Data-Protection / Responsible Data-Use Undertaking</label>
+                        <label><input type="checkbox"> Declaration of Conflict of Interest</label>
+                        <label><input type="checkbox"> Authorised use of portal information</label>
+                    </div>
+                    <div class="consent-note">Where required, appropriate consent/assent and institutional permissions
+                        should also be recorded.</div>
+                </div>
+            </div>
+
+            <div class="admin-dashboard-grid two-cols">
+                <div class="admin-panel certificate-panel">
+                    <div class="admin-panel-heading">
+                        <div><span class="panel-kicker">06 · CERTIFICATE &amp; STUDENT COMPLETION</span>
+                            <h3>Completion &amp; Verification</h3>
+                        </div><span class="admin-chip gold">Not automatic</span>
+                    </div>
+                    <p class="panel-description">Registration alone does not qualify a student for a certificate.</p>
+                    <div class="certificate-criteria">
+                        <div>✓ Minimum monitoring period completed</div>
+                        <div>✓ Required reviews completed</div>
+                        <div>✓ Monitoring notes submitted</div>
+                        <div>✓ Confidentiality requirements complied with</div>
+                        <div>✓ Nodal Officer's verification</div>
+                        <div>✓ PO confirmation, where appropriate</div>
+                    </div>
+                    <div class="certificate-preview">
+                        <div class="cert-seal">P</div>
+                        <div><span>Certificate of Participation</span><strong>PHOENIX Child-Rehabilitation Monitoring
+                                Partner</strong><small>Issued only after verification of completion
+                                requirements.</small></div>
+                    </div>
+                </div>
+
+                <div class="admin-panel final-review-panel">
+                    <div class="admin-panel-heading">
+                        <div><span class="panel-kicker">07 · FINAL REVIEW AT AGE 21</span>
+                            <h3>Final Reintegration Review</h3>
+                        </div><span class="admin-chip purple">Milestone</span>
+                    </div>
+                    <p class="panel-description">When the child reaches 21, the system generates the final reintegration
+                        review, subject to the applicable rehabilitation / aftercare period.</p>
+                    <div class="final-status-grid">
+                        <div><span>Education</span><strong>Continued / Completed / Discontinued</strong></div>
+                        <div><span>Training</span><strong>Completed / Ongoing / Discontinued</strong></div>
+                        <div><span>Employment</span><strong>Employed / Seeking Employment / Further Training /
+                                Other</strong></div>
+                        <div><span>Support required</span><strong>Yes / No</strong></div>
+                    </div>
+                    <div class="final-question"><span>Final Child Feedback</span>
+                        <blockquote>“What has changed for you since entering the PHOENIX programme?”</blockquote>
+                    </div>
+                    <div class="final-po"><strong>PO's Final Review</strong><span>Progress achieved · Remaining needs ·
+                            Sustainability of education/employment · Further referrals, if necessary</span></div>
+                    <div class="monitoring-complete"><span>✓</span>
+                        <div><strong>Monitoring Completed</strong><small>Use completion status rather than simply “Case
+                                Closed.”</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-flow-map">
+                <span>CHILD PROFILE</span><b>↓</b><span>PO ASSIGNED</span><b>↓</b><span>LAW STUDENT MONITORING PARTNER
+                    ASSIGNED</span><b>↓</b><span>PERIODIC REVIEW</span><em>Child · PO · Employer / Training Provider ·
+                    Law Student</em><b>↓</b><span>NODAL OFFICER VERIFICATION</span><b>↓</b><span>REFERRAL / INTERVENTION
+                    IF REQUIRED</span><b>↓</b><span>NEXT REVIEW</span><b>↓</b><span>CONTINUED MONITORING UNTIL
+                    21</span><b>↓</b><span>FINAL REINTEGRATION REVIEW</span>
+            </div>
+
+            <div class="admin-disclaimer"><strong>Administrative safeguard:</strong> PHOENIX monitoring supports
+                follow-up and coordination. The law-student monitoring partner is not a statutory authority and must
+                work only within the authorised role, confidentiality requirements and directions of the responsible
+                officer.</div>
+        </div>
+    </section>
+
+    <section class="protected-section" id="profile">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">
+                    CANDIDATE DASHBOARD
+                </span>
+                <h2>
+                    Individual Employability Profile
+                </h2>
+                <p id="profileIntro">
+                    Candidate information is available only after successful login.
+                </p>
+            </div>
+            <div class="login-required" id="profileLocked">
+                <div class="login-required-icon">
+                    🔐
+                </div>
+                <h3>
+                    Login Required
+                </h3>
+                <p>
+                    Your profile, learning record, certificates and eligibility assessment are protected information.
+                </p>
+                <a class="primary-button" href="#home" onclick="focusLogin();return false;">
+                    Go to Login
+                </a>
+            </div>
+            <div class="is-hidden" id="privateProfile">
+                <div class="profile-dashboard">
+                    <div class="candidate-card">
+                        <div class="candidate-top">
+                            <div class="candidate-avatar">HG</div>
+                            <div>
+                                <h3>Candidate Profile</h3>
+                                <p>Candidate ID: JSP-2026-00124 &bull; Username: himanshugavhane</p>
+                            </div>
+                            <span class="status-badge">Authorized View</span>
+                        </div>
+                        <div class="candidate-details">
+                            <div><span>Candidate Name</span><strong>Himanshu Gavhane</strong></div>
+                            <div><span>Join Date</span><strong>03 Jan 2026</strong></div>
+                            <div><span>Basic Details</span><strong>Age 19, District: Pune</strong></div>
+                            <div><span>Education</span><strong>School-level / vocational readiness</strong></div>
+                            <div><span>Training Status</span><strong>In Progress</strong></div>
+                            <div><span>Preferred Sector</span><strong>General vocational roles</strong></div>
+                            <div><span>Skill Match</span><strong>Retail, Hospitality, Digital Support</strong></div>
+                            <div><span>Eligibility</span><strong class="restricted">Restricted for specified
+                                    roles</strong></div>
+                        </div>
+                        <div class="candidate-metrics">
+                            <div class="metric-box"><span class="metric-label">Courses Applied</span><strong>05</strong>
+                            </div>
+                            <div class="metric-box"><span class="metric-label">In Progress</span><strong>02</strong>
+                            </div>
+                            <div class="metric-box"><span class="metric-label">Completed</span><strong>03</strong></div>
+                            <div class="metric-box"><span class="metric-label">Remaining</span><strong>01</strong></div>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title">
+                            <h3>Skills &amp; Qualifications</h3><span>Verified Record</span>
+                        </div>
+                        <div class="skill-list">
+                            <span>English Communication</span>
+                            <span>Typing &amp; Digital Basics</span>
+                            <span>Workplace Communication</span>
+                            <span>Teamwork</span>
+                            <span>Basic Company Practices</span>
+                            <span>Customer Interaction</span>
+                            <span>Hygiene &amp; Safety</span>
+                        </div>
+                    </div>
+                    <div class="dashboard-card">
+                        <div class="card-title">
+                            <h3>Certifications</h3>
+                        </div>
+                        <div class="certificate">
+                            <div class="certificate-icon">&checkmark;</div>
+                            <div><strong>English Communication</strong>
+                                <p>Completed &bull; 20 Hours &bull; Certificate issued</p>
+                            </div>
+                        </div>
+                        <div class="certificate">
+                            <div class="certificate-icon">&checkmark;</div>
+                            <div><strong>Typing &amp; Digital Basics</strong>
+                                <p>Completed &bull; 80 Hours &bull; Certificate issued</p>
+                            </div>
+                        </div>
+                        <div class="certificate">
+                            <div class="certificate-icon pending">&bull;</div>
+                            <div><strong>Basics of Company Practices</strong>
+                                <p>65 / 200 Hours &bull; 135 Hours remaining</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="private-alert"><b>Employment eligibility:</b> This demonstration profile is currently not
+                    eligible for service-company roles or roles in which typing/computer operation is an essential
+                    requirement. Matching for other lawful vocational opportunities remains subject to age, role
+                    requirements, rehabilitation assessment and applicable law.</div>
+                <div class="official-note" style="margin-top: 20px;"><strong>Mentor Review Summary</strong>
+                    <p><b>Support plan:</b> Strengthen digital confidence, improve customer-facing communication, and
+                        continue workplace readiness training.</p>
+                    <p><b>Recommended pathway:</b> Retail operations, hospitality support, and safe digital service
+                        roles with structured supervision.</p>
+                    <p class="muted">Profile is a demonstration record for prototype evaluation only.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="progress-section protected-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">TRAINING MONITORING</span>
+                <h2>Progress &amp; Completion Tracking</h2>
+                <p id="progressIntro">Authorized learning progress for himanshugavhane.</p>
+            </div>
+            <div class="login-required compact" id="progressLocked">
+                <div class="login-required-icon">🔐</div>
+                <h3>Protected Learning Record</h3>
+                <p>Course hours, completion status and certificates are shown only to the authorized candidate.</p>
+            </div>
+            <div class="is-hidden" id="privateProgress">
+                <div class="progress-grid">
+                    <div class="progress-stat"><span class="progress-number">165</span><span
+                            class="progress-unit">Hours</span>
+                        <p>Completed in current learning record</p>
+                    </div>
+                    <div class="progress-stat"><span class="progress-number">2</span><span
+                            class="progress-unit">Certificates</span>
+                        <p>Verified course certificates</p>
+                    </div>
+                    <div class="progress-stat"><span class="progress-number">135</span><span
+                            class="progress-unit">Hours</span>
+                        <p>Remaining in Company Practices</p>
+                    </div>
+                    <div class="progress-stat"><span class="progress-number">3</span><span
+                            class="progress-unit">Courses</span>
+                        <p>Recorded learning modules</p>
+                    </div>
+                </div>
+                <div class="skill-progress-panel">
+                    <div class="panel-header">
+                        <h3>Skill Progress</h3><span>Updated Today</span>
+                    </div>
+                    <div class="progress-track-row"><label>Communication</label>
+                        <div class="progress-bar"><span style="width: 92%;"></span></div><strong>92%</strong>
+                    </div>
+                    <div class="progress-track-row"><label>Digital Basics</label>
+                        <div class="progress-bar"><span style="width: 100%;"></span></div><strong>100%</strong>
+                    </div>
+                    <div class="progress-track-row"><label>Workplace Skills</label>
+                        <div class="progress-bar"><span style="width: 74%;"></span></div><strong>74%</strong>
+                    </div>
+                    <div class="progress-track-row"><label>Customer Readiness</label>
+                        <div class="progress-bar"><span style="width: 66%;"></span></div><strong>66%</strong>
+                    </div>
+                </div>
+                <div class="analytics-grid" style="margin: 24px 0 18px;">
+                    <div class="analytics-card">
+                        <div class="analytics-card-header"><span>OVERALL</span><span class="private-label">Live</span>
+                        </div>
+                        <h3>Completion Analytics</h3>
+                        <div class="big-number">69%</div>
+                        <p>Overall course completion based on the active learning plan for himanshugavhane.</p>
+                        <div class="mini-bars">
+                            <div class="bar-row"><span>English</span>
+                                <div class="bar">
+                                    <div style="width:100%"></div>
+                                </div><strong>100%</strong>
+                            </div>
+                            <div class="bar-row"><span>Typing</span>
+                                <div class="bar">
+                                    <div style="width:100%"></div>
+                                </div><strong>100%</strong>
+                            </div>
+                            <div class="bar-row"><span>Company</span>
+                                <div class="bar">
+                                    <div style="width:33%"></div>
+                                </div><strong>33%</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="analytics-card">
+                        <div class="analytics-card-header"><span>ACTIVE</span>
+                            <div class="analytics-icon">📊</div>
+                        </div>
+                        <h3>Current Course Run</h3>
+                        <div class="big-number">04</div>
+                        <p>Courses currently running in the trainee plan with active mentor monitoring.</p>
+                        <div class="mini-bars">
+                            <div class="bar-row"><span>Attendance</span>
+                                <div class="bar">
+                                    <div style="width:92%"></div>
+                                </div><strong>92%</strong>
+                            </div>
+                            <div class="bar-row"><span>Module</span>
+                                <div class="bar">
+                                    <div style="width:74%"></div>
+                                </div><strong>74%</strong>
+                            </div>
+                            <div class="bar-row"><span>Mentor</span>
+                                <div class="bar">
+                                    <div style="width:88%"></div>
+                                </div><strong>88%</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="training-table">
+                        <table>
+                            <tr>
+                                <th>Course</th>
+                                <th>Completed</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>English Communication</td>
+                                <td>20 hrs</td>
+                                <td>20 hrs</td>
+                                <td>Certificate issued</td>
+                            </tr>
+                            <tr>
+                                <td>Typing &amp; Digital Basics</td>
+                                <td>80 hrs</td>
+                                <td>80 hrs</td>
+                                <td>Certificate issued</td>
+                            </tr>
+                            <tr>
+                                <td>Basics of Company Practices</td>
+                                <td>65 hrs</td>
+                                <td>200 hrs</td>
+                                <td>135 hrs remaining</td>
+                            </tr>
+                            <tr>
+                                <td>Workplace Rights &amp; Responsibilities</td>
+                                <td>12 hrs</td>
+                                <td>20 hrs</td>
+                                <td>In progress</td>
+                            </tr>
+                            <tr>
+                                <td>Customer Service Readiness</td>
+                                <td>09 hrs</td>
+                                <td>16 hrs</td>
+                                <td>Running in current cycle</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script>if (sessionStorage.getItem('phoenixPOAuth') !== 'true') { document.body.innerHTML = '<div style="font-family:Arial;text-align:center;padding:80px"><h2>Authorised access required</h2><p>Please return to the PHOENIX Admin portal and sign in as a Probation Officer.</p><a href="admin-login.html">Return to secure login</a></div>'; } else { const d = document.getElementById('nextReviewDate'); const c = document.getElementById('reviewCountdown'); if (d && c) { const target = new Date('2026-10-15T00:00:00'); const now = new Date(); const days = Math.ceil((target - now) / 86400000); c.textContent = days > 0 ? days + ' days remaining until the next scheduled review' : 'Review date reached — review due'; } }</script>
+</body>
+
+</html>

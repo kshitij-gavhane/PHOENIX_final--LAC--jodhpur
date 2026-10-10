@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Demonstration stakeholder dashboard for the PHOENIX learning and employment pathway.">
+    <title>PHOENIX | Stakeholder Dashboard</title>
+    <link rel="stylesheet" href="stakeholder-dashboard.css">
+</head>
+
+<body class="stakeholder-page">
+    <header class="stakeholder-header">
+        <div class="stakeholder-header-inner">
+            <a class="stakeholder-brand" href="index.html">
+                <img src="phoenix-logo(1).png" alt="PHOENIX logo">
+                <span><strong>PROJECT PHOENIX</strong><small>STAKEHOLDER WORKSPACE</small></span>
+            </a>
+            <div class="stakeholder-header-actions">
+                <span class="stakeholder-account" id="stakeholderAccount">Stakeholder</span>
+                <button class="stakeholder-logout" id="stakeholderLogout" type="button">Sign out</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="stakeholder-main">
+        <section class="stakeholder-welcome" aria-labelledby="dashboardTitle">
+            <div>
+                <p class="stakeholder-eyebrow">PARTNER OVERVIEW · OCTOBER 2026</p>
+                <h1 id="dashboardTitle">Learner outcomes &amp; pathway progress</h1>
+                <p>Review demonstration learner progress, certificates and follow-up actions in one place.</p>
+            </div>
+            <span class="demo-badge"><span aria-hidden="true">●</span> DEMO DATA</span>
+        </section>
+
+        <aside class="stakeholder-notice" aria-label="Demonstration data notice">
+            <strong>Prototype only</strong>
+            <p>All records, statistics, certificates and partner updates on this page are fictional sample data. Updates stay in this browser session; nothing is sent to PHOENIX or an organisation. “Partner-ready” is a sample workflow label, not a legal finding or employment eligibility decision.</p>
+        </aside>
+
+        <section class="stakeholder-stats" aria-label="Sample programme statistics">
+            <article class="stakeholder-stat"><span class="stakeholder-stat-icon navy" aria-hidden="true">▦</span><div><strong id="totalLearners">0</strong><span>Sample learners</span><small>In this demo cohort</small></div></article>
+            <article class="stakeholder-stat"><span class="stakeholder-stat-icon green" aria-hidden="true">✓</span><div><strong id="readyLearners">0</strong><span>Partner-ready (demo)</span><small>Requires authorised review</small></div></article>
+            <article class="stakeholder-stat"><span class="stakeholder-stat-icon orange" aria-hidden="true">◷</span><div><strong id="followupLearners">0</strong><span>Follow-ups due</span><small>Sample next-step queue</small></div></article>
+            <article class="stakeholder-stat"><span class="stakeholder-stat-icon blue" aria-hidden="true">▤</span><div><strong id="issuedCertificates">0</strong><span>Sample certificates</span><small>Click a record to view</small></div></article>
+        </section>
+
+        <section class="stakeholder-overview-grid" aria-label="Programme analytics">
+            <article class="stakeholder-panel">
+                <div class="stakeholder-panel-heading">
+                    <div><p class="stakeholder-kicker">LEARNING ACTIVITY</p><h2>Training progress</h2></div>
+                    <span class="sample-label">Illustrative</span>
+                </div>
+                <div class="course-progress-list" id="courseProgressList"></div>
+                <p class="panel-footnote">Completion figures are examples for interface demonstration only.</p>
+            </article>
+            <article class="stakeholder-panel">
+                <div class="stakeholder-panel-heading">
+                    <div><p class="stakeholder-kicker">COHORT SNAPSHOT</p><h2>Weekly learning hours</h2></div>
+                    <span class="sample-label">Sample week</span>
+                </div>
+                <div class="hours-chart" role="img" aria-label="Illustrative learning hours: Monday 12, Tuesday 18, Wednesday 14, Thursday 22, Friday 16, Saturday 9, Sunday 4">
+                    <div class="hours-column"><span style="--bar-height:48%"></span><small>Mon</small></div>
+                    <div class="hours-column"><span style="--bar-height:72%"></span><small>Tue</small></div>
+                    <div class="hours-column"><span style="--bar-height:56%"></span><small>Wed</small></div>
+                    <div class="hours-column"><span style="--bar-height:88%"></span><small>Thu</small></div>
+                    <div class="hours-column"><span style="--bar-height:64%"></span><small>Fri</small></div>
+                    <div class="hours-column"><span style="--bar-height:36%"></span><small>Sat</small></div>
+                    <div class="hours-column"><span style="--bar-height:18%"></span><small>Sun</small></div>
+                </div>
+                <p class="panel-footnote">Example activity totals only; no live attendance is connected.</p>
+            </article>
+        </section>
+
+        <section class="stakeholder-panel learner-panel" aria-labelledby="learnerHeading">
+            <div class="stakeholder-panel-heading learner-heading">
+                <div><p class="stakeholder-kicker">LEARNER RECORDS</p><h2 id="learnerHeading">Progress &amp; follow-up</h2><p class="panel-description">Search sample records, inspect certificates, and save a demo status or follow-up note.</p></div>
+                <div class="learner-filters">
+                    <label class="visually-hidden" for="learnerSearch">Search learners</label>
+                    <input type="search" id="learnerSearch" placeholder="Search ID, name or pathway">
+                    <label class="visually-hidden" for="readinessFilter">Filter by sample readiness</label>
+                    <select id="readinessFilter">
+                        <option value="all">All readiness labels</option>
+                        <option value="ready">Partner-ready (demo)</option>
+                        <option value="follow-up">Follow-up due</option>
+                        <option value="learning">Learning</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th scope="col">Learner</th><th scope="col">District</th><th scope="col">Pathway</th><th scope="col">Progress</th><th scope="col">Workflow label</th><th scope="col">Certificates</th><th scope="col" aria-label="Record actions"></th></tr></thead>
+                    <tbody id="learnerTableBody"></tbody>
+                </table>
+            </div>
+            <p class="table-empty is-hidden" id="emptyResults">No sample learners match this search.</p>
+            <p class="table-footnote">Use sample learner IDs only. Do not enter or upload personal, case or sensitive information.</p>
+        </section>
+
+        <footer class="stakeholder-footer">
+            <span>PHOENIX · Stakeholder demonstration workspace</span>
+            <a href="index.html">Return to main website</a>
+        </footer>
+    </main>
+
+    <dialog class="stakeholder-dialog" id="recordDialog" aria-labelledby="recordDialogTitle">
+        <form id="recordForm" method="dialog">
+            <div class="dialog-heading"><div><p class="stakeholder-kicker">DEMO RECORD</p><h2 id="recordDialogTitle">Manage learner follow-up</h2></div><button class="dialog-close" type="button" data-close-dialog aria-label="Close">×</button></div>
+            <p class="dialog-learner" id="dialogLearnerName"></p>
+            <input type="hidden" id="dialogLearnerId">
+            <label for="dialogStatus">Sample workflow status</label>
+            <select id="dialogStatus">
+                <option value="learning">Learning</option>
+                <option value="follow-up">Follow-up due</option>
+                <option value="ready">Partner-ready (demo)</option>
+            </select>
+            <label for="dialogNote">Follow-up note <span>(fictional demo note only)</span></label>
+            <textarea id="dialogNote" rows="4" maxlength="280" placeholder="Add a non-sensitive sample note"></textarea>
+            <p class="dialog-save-note">Saved in this browser session only. No organisation or learner record is updated.</p>
+            <div class="dialog-actions"><button class="secondary-button" type="button" data-close-dialog>Cancel</button><button class="primary-button" type="submit">Save demo update</button></div>
+        </form>
+    </dialog>
+
+    <dialog class="stakeholder-dialog certificate-dialog" id="certificateDialog" aria-labelledby="certificateTitle">
+        <div class="certificate-actions"><button class="secondary-button" id="printCertificate" type="button">Print certificate</button><button class="dialog-close" type="button" data-close-dialog aria-label="Close certificate">×</button></div>
+        <article class="certificate-paper">
+            <div class="certificate-brand"><img src="phoenix-logo(1).png" alt=""><span>PROJECT PHOENIX<small>SKILLS · LEARNING · OPPORTUNITY</small></span></div>
+            <p class="certificate-kicker">CERTIFICATE OF COMPLETION · DEMO</p>
+            <h2 id="certificateTitle">Certificate of Achievement</h2>
+            <p class="certificate-copy">This sample certificate is presented to</p>
+            <p class="certificate-recipient" id="certificateRecipient"></p>
+            <p class="certificate-copy">for completing the illustrative learning programme</p>
+            <p class="certificate-course" id="certificateCourse"></p>
+            <div class="certificate-details"><div><span>COMPLETION</span><strong id="certificateDate"></strong></div><div><span>LEARNING HOURS</span><strong id="certificateHours"></strong></div></div>
+            <p class="certificate-id">Sample ID: <span id="certificateId"></span></p>
+            <span class="certificate-watermark" aria-hidden="true">DEMO</span>
+        </article>
+        <p class="certificate-disclaimer">Illustrative sample only. This is not an official credential or proof of qualification.</p>
+    </dialog>
+
+    <script src="stakeholder-dashboard.js"></script>
+</body>
+
+</html>

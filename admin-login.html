@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>PHOENIX | Secure Access</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f4f7fb, #eaf0f7);
+            font-family: Arial, sans-serif
+        }
+
+        .login-wrap {
+            max-width: 560px;
+            margin: 48px auto;
+            padding: 22px
+        }
+
+        .partner-login-card {
+            background: #fff;
+            border: 1px solid #dce5ee;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: 0 16px 42px #18375518
+        }
+
+        .brandline {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px
+        }
+
+        .brandline img {
+            width: 72px;
+            height: 72px;
+            object-fit: contain
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 1.7px;
+            color: #60748a;
+            font-weight: 800
+        }
+
+        .partner-login-card h1 {
+            color: #17324d;
+            margin: 8px 0
+        }
+
+        .partner-login-card p {
+            color: #66788a;
+            line-height: 1.6
+        }
+
+        .partner-login-card label {
+            display: block;
+            margin: 15px 0 6px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #40556a
+        }
+
+        .partner-login-card input,
+        .partner-login-card select {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #cbd7e3;
+            border-radius: 9px;
+            background: #fff;
+            color: #26384f;
+            font: inherit
+        }
+
+        .captcha {
+            display: grid;
+            grid-template-columns: auto 44px 1fr;
+            gap: 8px;
+            align-items: center
+        }
+
+        .captcha-code {
+            padding: 13px;
+            background: #eef3f8;
+            border-radius: 8px;
+            font-weight: 800;
+            letter-spacing: 3px
+        }
+
+        .captcha button {
+            height: 43px;
+            background: #fff;
+            border: 1px solid #cbd7e3;
+            border-radius: 8px;
+            cursor: pointer
+        }
+
+        .primary {
+            width: 100%;
+            padding: 14px;
+            margin-top: 20px;
+            border: 0;
+            border-radius: 9px;
+            background: #173b5c;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        .primary:hover {
+            background: #24547c
+        }
+
+        .msg {
+            font-size: 14px;
+            min-height: 20px;
+            margin-top: 12px
+        }
+
+        .demo {
+            font-size: 12px;
+            color: #52677c;
+            background: #f2f6fa;
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 14px;
+            line-height: 1.7
+        }
+
+        .demo strong {
+            color: #294660
+        }
+
+        .security-note {
+            border-left: 3px solid #db9636;
+            padding-left: 10px;
+            margin-top: 12px !important;
+            font-size: 12px
+        }
+
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #526a82;
+            text-decoration: none
+        }
+
+        @media(max-width:600px) {
+            .login-wrap {
+                margin: 14px auto;
+                padding: 14px
+            }
+
+            .partner-login-card {
+                padding: 22px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="login-wrap">
+        <section class="partner-login-card" aria-labelledby="loginTitle">
+            <div class="brandline">
+                <img src="phoenix-logo(1).png" alt="PHOENIX logo">
+                <div>
+                    <div class="eyebrow">PROJECT PHOENIX · SECURE ACCESS</div>
+                    <h1 id="loginTitle">Partner Login</h1>
+                </div>
+            </div>
+            <p id="loginDescription">Choose your role to continue to the appropriate PHOENIX workspace.</p>
+            <form id="partnerLogin">
+                <label for="role">Login as</label>
+                <select id="role" name="role">
+                    <option value="officer">Probation Officer</option>
+                    <option value="stakeholder">Stakeholder</option>
+                </select>
+                <label for="username" id="usernameLabel">Officer username / ID</label>
+                <input id="username" name="username" autocomplete="username" required>
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+                <label for="captchaInput">CAPTCHA</label>
+                <div class="captcha">
+                    <span class="captcha-code" id="captchaCode" aria-label="CAPTCHA code">7K4P2</span>
+                    <button type="button" id="refreshCaptcha" aria-label="Generate a new CAPTCHA">↻</button>
+                    <input id="captchaInput" name="captcha" placeholder="Enter code" autocomplete="off" required>
+                </div>
+                <button class="primary" id="submitLogin" type="submit">Sign in to Monitoring</button>
+                <div id="loginMessage" class="msg" aria-live="polite"></div>
+            </form>
+            <div class="demo" id="demoCredentials">
+                <strong>Probation Officer demo:</strong> probation.officer / PHX-PO-2026
+            </div>
+            <p class="security-note">Demonstration access only. This static prototype does not authenticate users against a secure service or protect real case records.</p>
+            <a class="back" href="index.html">← Return to main PHOENIX website</a>
+        </section>
+    </main>
+    <script>
+        (function () {
+            'use strict';
+
+            var captcha = '7K4P2';
+            var roleSelect = document.getElementById('role');
+            var usernameInput = document.getElementById('username');
+            var usernameLabel = document.getElementById('usernameLabel');
+            var submitButton = document.getElementById('submitLogin');
+            var credentials = document.getElementById('demoCredentials');
+            var message = document.getElementById('loginMessage');
+            var requestedRole = new URLSearchParams(window.location.search).get('role');
+
+            if (requestedRole === 'stakeholder') {
+                roleSelect.value = 'stakeholder';
+            }
+
+            function updateRoleFields() {
+                var isStakeholder = roleSelect.value === 'stakeholder';
+                document.getElementById('loginTitle').textContent = isStakeholder ? 'Stakeholder Login' : 'Probation Officer Login';
+                document.getElementById('loginDescription').textContent = isStakeholder
+                    ? 'Access the demonstration partner workspace for learner progress, certificates and follow-up.'
+                    : 'Authorised demonstration access to Monitoring & Follow-Up and supervision tools.';
+                usernameLabel.textContent = isStakeholder ? 'Stakeholder username / ID' : 'Officer username / ID';
+                usernameInput.placeholder = isStakeholder ? 'e.g. stakeholder1' : 'e.g. probation.officer';
+                submitButton.textContent = isStakeholder ? 'Sign in to Stakeholder Dashboard' : 'Sign in to Monitoring';
+                credentials.innerHTML = isStakeholder
+                    ? '<strong>Stakeholder demo accounts:</strong> stakeholder1, stakeholder2 or stakeholder3<br><strong>Shared password:</strong> PHX-ST-2026'
+                    : '<strong>Probation Officer demo:</strong> probation.officer / PHX-PO-2026';
+                message.textContent = '';
+            }
+
+            roleSelect.addEventListener('change', updateRoleFields);
+            updateRoleFields();
+            document.getElementById('refreshCaptcha').addEventListener('click', function () {
+                var characters = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+                captcha = Array.from({ length: 5 }, function () {
+                    return characters[Math.floor(Math.random() * characters.length)];
+                }).join('');
+                document.getElementById('captchaCode').textContent = captcha;
+                document.getElementById('captchaInput').value = '';
+            });
+
+            document.getElementById('partnerLogin').addEventListener('submit', function (event) {
+                event.preventDefault();
+                var username = usernameInput.value.trim().toLowerCase();
+                var password = document.getElementById('password').value;
+                var enteredCaptcha = document.getElementById('captchaInput').value.trim().toUpperCase();
+                var isStakeholder = roleSelect.value === 'stakeholder';
+
+                if (enteredCaptcha !== captcha) {
+                    message.textContent = 'CAPTCHA does not match. Please try again.';
+                    message.style.color = '#b42318';
+                    return;
+                }
+
+                if (isStakeholder) {
+                    var stakeholderAccounts = ['stakeholder1', 'stakeholder2', 'stakeholder3'];
+                    if (stakeholderAccounts.indexOf(username) === -1 || password !== 'PHX-ST-2026') {
+                        message.textContent = 'Invalid stakeholder username or shared password.';
+                        message.style.color = '#b42318';
+                        return;
+                    }
+                    sessionStorage.setItem('phoenixStakeholderAuth', 'true');
+                    sessionStorage.setItem('phoenixStakeholderId', username);
+                    window.location.assign('stakeholder-portal.html');
+                    return;
+                }
+
+                if (username !== 'probation.officer' || password !== 'PHX-PO-2026') {
+                    message.textContent = 'Invalid Probation Officer credentials.';
+                    message.style.color = '#b42318';
+                    return;
+                }
+
+                sessionStorage.setItem('phoenixPOAuth', 'true');
+                message.textContent = 'Login successful. Opening monitoring dashboard…';
+                message.style.color = '#16734a';
+                var dashboard = window.open('monitoring.html', '_blank');
+                if (!dashboard) {
+                    message.innerHTML = 'Your browser blocked the new tab. <a href="monitoring.html">Open Monitoring Dashboard</a>';
+                }
+            });
+        }());
+    </script>
+</body>
+
+</html>

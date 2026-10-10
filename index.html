@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        PHOENIX
+    </title>
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- EDIT CONTENT: Update text/content inside the clearly labeled sections below. Keep IDs/classes unchanged when possible because JavaScript relies on them. -->
+    <div class="top-government-bar">
+        <div class="container top-bar-content">
+            
+            <div class="top-links">
+                <a href="#main-content" class="skip-link">
+                    Skip to Main Content
+                </a>
+                <button class="accessibility-toggle" id="accessibilityToggle" type="button" aria-expanded="false" aria-controls="accessibilityTools">
+                    Accessibility
+                </button>
+                <div class="utility-language" role="group" aria-label="Choose language">
+                    <button class="language-button" type="button" data-language="en" lang="en" aria-pressed="false">English</button>
+                    <button class="language-button" type="button" data-language="hi" lang="hi" aria-pressed="false">हिन्दी</button>
+                    <button class="language-button" type="button" data-language="mr" lang="mr" aria-pressed="false">मराठी</button>
+
+                </div>
+                <div class="accessibility-tools is-hidden" id="accessibilityTools" aria-label="Accessibility tools">
+                    <button type="button" data-font-size="decrease" aria-label="Decrease text size">A−</button>
+                    <button type="button" data-font-size="reset" aria-label="Reset text size">A</button>
+                    <button type="button" data-font-size="increase" aria-label="Increase text size">A+</button>
+                    <button type="button" class="contrast-toggle" id="contrastToggle" aria-pressed="false">High contrast</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="brand">
+                <div class="emblem"><img alt="PHOENIX logo" class="phoenix-brand-logo" src="phoenix-logo(1).png" />
+                </div>
+                <div class="brand-text">
+                    <h1>
+                        PHOENIX
+                    </h1>
+                    <p>
+                        Pathways for Hiring, Oversight, Employment & New-Reintegration of Ex-Juvenile
+                    </p>
+                </div>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primaryNavigation">
+                <span class="mobile-menu-icon" aria-hidden="true"><i></i><i></i><i></i></span>
+                <span class="mobile-menu-label">Menu</span>
+            </button>
+            <nav class="navigation" id="primaryNavigation">
+                <a href="#home">
+                    Home
+                </a>
+                <a href="#about">
+                    Discover
+                </a>
+                <a href="#courses">
+                    Opportunities
+                </a>
+                <a href="#stakeholder">
+                    Ecosystem
+                </a>
+                <a href="#contact">
+                    Support
+                </a>
+                <a href="juvenile-login.html">
+                    My Journey
+                </a>
+                <a class="admin-nav-link" href="admin-login.html">
+                    Admin
+                </a>
+            </nav>
+        </div>
+    </header>
+    <div aria-label="Important announcements" class="announcement-ticker">
+        <div class="ticker-track">
+            <span>New learning pathways are now available</span>
+            <span>Explore courses designed around your interests</span>
+            <span>Build skills. Earn certificates. Discover opportunities</span>
+            <span>New workshops and learning activities are being added regularly</span>
+            <span>Explore apprenticeships and career pathways</span>
+            <span>Your learning journey starts here</span>
+            <span>Learn at your pace. Build at your future</span>
+        </div>
+    </div>
+    <main id="main-content">
+    <section class="hero" id="home">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="government-tag">
+                    A Child-Centred Skills &amp; Opportunity Initiative
+                </div>
+                <h2>
+                    Discover Your Skills
+                    <br />
+                    Build Your Future
+                </h2>
+                <p>
+                    PHOENIX is a learning and opportunity platform
+                    where you can discover your interests, build practical skills,
+                    earn recognised certificates and explore future career pathways.
+                    
+                </p>
+                <div class="hero-buttons">
+                    <a class="primary-button" href="#courses">
+                        Explore Skills
+                    </a>
+                    <a class="secondary-button" href="#about">
+                        Discover Your Path
+                    </a>
+                </div>
+            </div>
+            <div class="login-card">
+                <div class="login-header">
+                    <div>
+                        <h3>
+                            Welcome Back
+                        </h3>
+                        <p>
+                            Continue your learning journey
+                        </p>
+                    </div>
+                </div>
+                <form id="loginForm" onsubmit="return phoenixHomeLogin(event)">
+                    <label>
+                        Username/ Learner ID
+                    </label>
+                    <input autocomplete="username" id="username" placeholder="Enter username" type="text" />
+                    <label>
+                        Password
+                    </label>
+                    <input autocomplete="current-password" id="password" placeholder="Enter password" type="password" />
+                    <label>
+                        Captcha
+                    </label>
+                    <div class="captcha-row">
+                        <div class="captcha" id="captchaCode">
+                            7K4P2
+                        </div>
+                        <button class="refresh-captcha" onclick="refreshCaptcha()" type="button">
+                            &orarr;
+                        </button>
+                        <input id="captchaInput" placeholder="Enter captcha" type="text" />
+                    </div>
+                    <button class="login-button" type="submit">
+                        Login
+                    </button>
+                    <div class="login-message" id="loginMessage">
+                    </div>
+                    <div class="login-links">
+                        <a href="#"
+                            onclick="alert('For the demonstration, use the credentials supplied with the prototype.');return false;">
+                            Forgot Password?
+                        </a>
+                        <a href="#about">
+                            Help / Guidelines
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="government-strip">
+        <div class="container authority-slider">
+            <div class="authority-slide-track">
+                <div class="authority-card">
+                    <img alt="DLSA logo" class="authority-logo" src="dlsa.png" />
+                </div>
+                <div class="authority-card">
+                    <img alt="NALSA logo" class="authority-logo" src="nalsa.jpg" />
+                </div>
+                <div class="authority-card">
+                    <img alt="NCPCR logo" class="authority-logo" src="ncpcr.png" />
+                </div>
+                <div class="authority-card">
+                    <img alt="DLSA logo" class="authority-logo" src="dlsa.png" />
+                </div>
+                <div class="authority-card">
+                    <img alt="NALSA logo" class="authority-logo" src="nalsa.jpg" />
+                </div>
+                <div class="authority-card">
+                    <img alt="NCPCR logo" class="authority-logo" src="ncpcr.png" />
+                </div>
+                <div class="authority-card">
+                    <img alt="DLSA logo" class="authority-logo" src="dlsa.png" />
+                </div>
+                <div class="authority-card">
+                    <img alt="NALSA logo" class="authority-logo" src="nalsa.jpg" />
+                </div>
+                <div class="authority-card">
+                    <img alt="NCPCR logo" class="authority-logo" src="ncpcr.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">
+                    ONLINE SERVICES
+                </span>
+                <h2>
+                    Access Portal Services
+                </h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><img alt="Candidate Profile" loading="lazy"
+                            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=500&amp;q=80" />
+                    </div>
+                    <h3>
+                        Candidate Profile
+                    </h3>
+                    <p>
+                        View skills, qualifications, certificates and employability status.
+                    </p>
+                    <a href="juvenile-login.html">Open Participant Portal →</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><img alt="Skill Development" loading="lazy"
+                            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=500&amp;q=80" />
+                    </div>
+                    <h3>
+                        Skill Development
+                    </h3>
+                    <p>
+                        Explore vocational courses and monitor training progress.
+                    </p>
+                    <a href="#courses">
+                        Explore Courses →
+                    </a>
+                </div>
+                                <div class="service-card">
+                    <div class="service-icon"><img alt="Skill Development" loading="lazy"
+                            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=500&amp;q=80" />
+                    </div>
+                    <h3>
+                        Stakeholder Portal
+                    </h3>
+                    <p>
+                        Authorized stakeholders can access sector and placement information.
+                    </p>
+                    <a href="admin-login.html?role=stakeholder">
+                        Stakeholder Login →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about-section" id="about">
+        <div class="container two-column">
+            <div>
+                <span class="section-label">
+                    ABOUT PHOENIX
+                </span>
+                <h2>
+                    A Platform for Learning, Growth &amp; Opportunity
+                </h2>
+                <p>
+                    <strong>PHOENIX</strong> is a platform designed to help young learners discover their interests,
+                    develop practical skills, earn recognised certifications and explore meaningful opportunities
+                    for their future.
+                </p>
+                <p>
+                    We believe that every young person has the potential to learn,
+                    grow and build a meaningful future when provided with the right opportunities,
+                    guidance and support. PHOENIX brings these elements together through a structured
+                    journey that connects learning with skills, skills with opportunities, and
+                    opportunities with sustainable growth.
+                <div class="info-points">
+                    <div>
+                        <strong>
+                            01
+                        </strong>
+                        <span>
+                            Child-Centred Legal Support
+                        </span>
+                    </div>
+                    <div>
+                        <strong>
+                            02
+                        </strong>
+                        <span>
+                            Individual Employability Profile
+                        </span>
+                    </div>
+                    <div>
+                        <strong>
+                            03
+                        </strong>
+                        <span>
+                            Skill Development &amp; Certification
+                        </span>
+                    </div>
+                    <div>
+                        <strong>
+                            04
+                        </strong>
+                        <span>
+                            Responsible Employment Linkage
+                        </span>
+                    </div>
+                </div>
+                </p>
+            </div>
+            <div class="about-box">
+                <div class="about-box-header">
+                    YOUR JOURNEY. YOUR SKILLS. YOUR FUTURE.
+                </div>
+                <div class="framework-step">
+                    <span>
+                        1
+                    </span>
+                    <div>
+                        <strong>
+                            Discover
+                        </strong>
+                        <p>
+                            Discover your strengths. Find your direction.
+                        </p>
+                        <p>
+                            Explore your interests, abilities and areas of potential
+                            through guided assessments and personalised learning pathways.
+                        </p>
+                    </div>
+                </div>
+                <div class="framework-step">
+                    <span>
+                        2
+                    </span>
+                    <div>
+                        <strong>
+                            Build
+                        </strong>
+                        <p>
+                            Learn. Practise. Grow.
+                        </p>
+                        <p>
+                            Develop practical and future-ready skills through courses,
+                            workshops and learning programmes designed around your interests and aspirations.
+                            Build knowledge, confidence and recognised skills through certification opportunities.
+                        </p>
+                    </div>
+                </div>
+                <div class="framework-step">
+                    <span>
+                        3
+                    </span>
+                    <div>
+                        <strong>
+                            Connect
+                        </strong>
+                        <p>
+                            Turn your skills into opportunities.
+                        </p>
+                        <p>
+                            Explore pathways that connect your skills,
+                            interests and certifications with relevant training providers,
+                            institutions, mentors and career opportunities.
+                        </p>
+                    </div>
+                </div>
+                <div class="framework-step">
+                    <span>
+                        4
+                    </span>
+                    <div>
+                        <strong>
+                            Sustain
+                        </strong>
+                        <p>
+                            Keep learning. Keep growing.
+                        </p>
+                        <p>
+                            Continue your journey with access to guidance,
+                            support and opportunities that help transform
+                            learning and skills into sustainable personal and professional growth.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="official-note">
+                <strong>
+                    Institutional Framework
+                </strong>
+                <p>
+                    <b>
+                        NALSA:
+                    </b>
+                    Child-friendly legal services, legal aid, counselling, representation and coordination through
+                    State/District Legal Services Institutions.
+                </p>
+                <p>
+                    <b>
+                        NCPCR:
+                    </b>
+                    Protection and promotion of child rights, monitoring of child-rights safeguards and matters concerning
+                    children in conflict with law.
+                </p>
+                <p class="muted">
+                    This prototype is a proposed coordination model; it does not represent an existing government portal or
+                    imply that NALSA and NCPCR jointly administer this software.
+                </p>
+                <div class="source-links">
+                    <a href="https://nalsa.gov.in/" target="_blank">
+                        NALSA Official Website ↗
+                    </a>
+                    <a href="https://www.ncpcr.gov.in/" target="_blank">
+                        NCPCR Official Website ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section id="career">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">
+                    CAREER &amp; SKILL DEVELOPMENT
+                </span>
+                <h2>
+                    Explore Employment Sectors
+                </h2>
+                <p>
+                    Public sector information is available to everyone. Candidate-specific matching appears only after login.
+                </p>
+            </div>
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <div class="industry-thumb">
+                        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=900&q=80" alt="Manufacturing" />
+                    </div>
+                    <div class="industry-icon">
+                        🏭
+                    </div>
+                    <h3>
+                        Manufacturing
+                    </h3>
+                    <p>
+                        Technical, production and support roles, subject to safety and eligibility requirements.
+                    </p>
+                    <div class="industry-data">
+                        <span>
+                            Training Areas
+                        </span>
+                        <strong>
+                            12
+                        </strong>
+                    </div>
+                    <a href="#stakeholder">
+                        View Stakeholders &rarr;
+                    </a>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-thumb">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80" alt="Hospitality" />
+                    </div>
+                    <div class="industry-icon">
+                        🏨
+                    </div>
+                    <h3>
+                        Hospitality
+                    </h3>
+                    <p>
+                        Food service, housekeeping and hospitality support roles.
+                    </p>
+                    <div class="industry-data">
+                        <span>
+                            Training Areas
+                        </span>
+                        <strong>
+                            09
+                        </strong>
+                    </div>
+                    <a href="#stakeholder">
+                        View Stakeholders &rarr;
+                    </a>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-thumb">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" alt="Digital Skills" />
+                    </div>
+                    <div class="industry-icon">
+                        💻
+                    </div>
+                    <h3>
+                        Digital Skills
+                    </h3>
+                    <p>
+                        Digital literacy and non-sensitive entry-level technology support roles.
+                    </p>
+                    <div class="industry-data">
+                        <span>
+                            Training Areas
+                        </span>
+                        <strong>
+                            15
+                        </strong>
+                    </div>
+                    <a href="#stakeholder">
+                        View Stakeholders &rarr;
+                    </a>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-thumb">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Retail" />
+                    </div>
+                    <div class="industry-icon">
+                        🛒
+                    </div>
+                    <h3>
+                        Retail
+                    </h3>
+                    <p>
+                        Customer service, inventory and retail operations.
+                    </p>
+                    <div class="industry-data">
+                        <span>
+                            Training Areas
+                        </span>
+                        <strong>
+                            08
+                        </strong>
+                    </div>
+                    <a href="#stakeholder">
+                        View Stakeholders &rarr;
+                    </a>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-thumb">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Skilled Trades" />
+                    </div>
+                    <div class="industry-icon">
+                        🔧
+                    </div>
+                    <h3>
+                        Skilled Trades
+                    </h3>
+                    <p>
+                        Electrical, maintenance, repair and technical trades.
+                    </p>
+                    <div class="industry-data">
+                        <span>
+                            Training Areas
+                        </span>
+                        <strong>
+                            18
+                        </strong>
+                    </div>
+                    <a href="#stakeholder">
+                        View Stakeholders &rarr;
+                    </a>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-thumb">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80" alt="Logistics" />
+                    </div>
+                    <div class="industry-icon">
+                        🚚
+                    </div>
+                    <h3>
+                        Logistics
+                    </h3>
+                    <p>
+                        Warehouse, supply-chain and logistics support roles.
+                    </p>
+                    <div class="industry-data">
+                        <span>
+                            Training Areas
+                        </span>
+                        <strong>
+                            07
+                        </strong>
+                    </div>
+                    <a href="#stakeholder">
+                        View Stakeholders &rarr;
+                    </a>
+                </div>
+            </div>
+            <div class="private-career-note">
+                <b>
+                    Authorized candidate matching:
+                </b>
+                Login to view your individual skills, eligibility indicators and recommended sectors.
+            </div>
+        </div>
+    </section>
+-->
+    <section class="skills-section reveal-section" id="courses">
+        <div class="container">
+            <div class="skills-intro">
+                <div><span class="section-label">SKILLS AVAILABLE</span>
+                    <h2>Explore job-ready skill pathways</h2>
+                </div>
+                <p>Job-ready pathways covering digital, service, office, finance, customer-support, logistics and
+                    e-commerce skills. Individual enrolment remains protected behind login.</p>
+            </div>
+            <div class="skills-grid" id="skillsGridFallback">
+                <div class="skill-card">
+                    <div class="skill-icon"><img alt="IT and Digital Services" loading="lazy"
+                            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                    </div>
+                    <h3>IT &amp; Digital Services</h3>
+                    <p class="skill-summary">Digital foundations for service-sector employment.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img alt="Retail Services" loading="lazy"
+                            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                    </div>
+                    <h3>Retail Services</h3>
+                    <p class="skill-summary">Customer-facing operations for organised retail and MSMEs.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img alt="Office and Administrative Services" loading="lazy"
+                            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                    </div>
+                    <h3>Office &amp; Administrative Services</h3>
+                    <p class="skill-summary">Practical pathways into organised office support roles.</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img alt="Customer Service and BPO Operations" loading="lazy"
+                            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&amp;fit=crop&amp;w=900&amp;q=85" />
+                    </div>
+                    <h3>Customer Service &amp; BPO Operations</h3>
+                    <p class="skill-summary">Job-ready communication and customer-support skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="stakeholder-section" id="stakeholder">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">STAKEHOLDER ECOSYSTEM</span>
+                <h2>Employment Ecosystem</h2>
+                <p class="partner-note">
+                    The organisations below are created for the PHOENIX demonstration interface.
+                    They show how different skills could be connected with suitable formal-employment pathways.
+                    They are not real companies and do not represent existing partnerships or recruitment arrangements.
+                </p>
+            </div>
+            <div class="stakeholder-grid">
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="NovaServe Solutions hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/novaserve-solutions.svg">
+                        </img>
+                    </div>
+                    <h3>NovaServe Solutions</h3>
+                    <p>Customer service, CRM and business-process support pathways.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="DigiCore Operations hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/digicore-operations.svg">
+                        </img>
+                    </div>
+                    <h3>DigiCore Operations</h3>
+                    <p>Data handling, IT helpdesk and digital-operations pathways.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="Finora Business Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/finora-business-services.svg">
+                        </img>
+                    </div>
+                    <h3>Finora Business Services</h3>
+                    <p>Customer onboarding, KYC documentation and financial-operations support.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="AccuLedger Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/acculedger-services.svg">
+                        </img>
+                    </div>
+                    <h3>AccuLedger Services</h3>
+                    <p>Billing, bookkeeping, GST and accounts-support pathways.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="RetailEdge Commerce hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/retailedge-commerce.svg" />
+                    </div>
+                    <h3>RetailEdge Commerce</h3>
+                    <p>Retail, e-commerce, sales-support and customer-service pathways.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="OfficeBridge Solutions hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/officebridge-solutions.svg" />
+                    </div>
+                    <h3>OfficeBridge Solutions</h3>
+                    <p>Reception, records, documentation and administrative-support pathways.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="Connecta Customer Care hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/connecta-customer-care.svg" />
+                    </div>
+                    <h3>Connecta Customer Care</h3>
+                    <p>Voice, non-voice, email and chat-based customer-support pathways.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="Ecomatrix Fulfilment hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/ecomatrix-fulfilment.svg" />
+                    </div>
+                    <h3>Ecomatrix Fulfilment</h3>
+                    <p>Order processing, inventory, catalogue and e-commerce operations.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="SkillAxis Business Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/skillaxis-business-services.svg" />
+                    </div>
+                    <h3>SkillAxis Business Services</h3>
+                    <p>Data management, MIS, reporting and back-office operations.</p>
+                </div>
+                <div class="stakeholder-opportunity">
+                    <div class="stakeholder-visual">
+                        <img alt="PrimeDesk Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/primedesk-services.svg" />
+                    </div>
+                    <h3>PrimeDesk Services</h3>
+                    <p>Office administration, helpdesk and service-coordination pathways.</p>
+                </div>
+            </div>
+            <div class="governance-card">
+                <strong>Responsible referral protocol:</strong>
+                Candidate referrals remain subject to individual assessment, age and legal eligibility,
+                safeguarding, role suitability, institutional approval and a documented referral process.
+                The hypothetical organisations shown here are illustrative only.
+            </div>
+        </div>
+    </section>
+    <section class="stakeholder-section stakeholder-logos" id="stakeholder-wordmarks">
+        <div class="container">
+            <div aria-label="Hypothetical employment ecosystem logos" class="logo-slider">
+                <div class="logo-track">
+                    <div class="wordmark"><img alt="NovaServe Solutions hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/novaserve-solutions.svg" /></div>
+                    <div class="wordmark"><img alt="DigiCore Operations hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/digicore-operations.svg" /></div>
+                    <div class="wordmark"><img alt="Finora Business Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/finora-business-services.svg" /></div>
+                    <div class="wordmark"><img alt="AccuLedger Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/acculedger-services.svg" /></div>
+                    <div class="wordmark"><img alt="RetailEdge Commerce hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/retailedge-commerce.svg" /></div>
+                    <div class="wordmark"><img alt="OfficeBridge Solutions hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/officebridge-solutions.svg" /></div>
+                    <div class="wordmark"><img alt="Connecta Customer Care hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/connecta-customer-care.svg" /></div>
+                    <div class="wordmark"><img alt="Ecomatrix Fulfilment hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/ecomatrix-fulfilment.svg" /></div>
+                    <div class="wordmark"><img alt="SkillAxis Business Services hypothetical company logo"
+                            loading="lazy" src="assets/partner-logos/skillaxis-business-services.svg" /></div>
+                    <div class="wordmark"><img alt="PrimeDesk Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/primedesk-services.svg" /></div>
+                    <div class="wordmark"><img alt="NovaServe Solutions hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/novaserve-solutions.svg" /></div>
+                    <div class="wordmark"><img alt="DigiCore Operations hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/digicore-operations.svg" /></div>
+                    <div class="wordmark"><img alt="Finora Business Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/finora-business-services.svg" /></div>
+                    <div class="wordmark"><img alt="AccuLedger Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/acculedger-services.svg" /></div>
+                    <div class="wordmark"><img alt="RetailEdge Commerce hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/retailedge-commerce.svg" /></div>
+                    <div class="wordmark"><img alt="OfficeBridge Solutions hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/officebridge-solutions.svg" /></div>
+                    <div class="wordmark"><img alt="Connecta Customer Care hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/connecta-customer-care.svg" /></div>
+                    <div class="wordmark"><img alt="Ecomatrix Fulfilment hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/ecomatrix-fulfilment.svg" /></div>
+                    <div class="wordmark"><img alt="SkillAxis Business Services hypothetical company logo"
+                            loading="lazy" src="assets/partner-logos/skillaxis-business-services.svg" /></div>
+                    <div class="wordmark"><img alt="PrimeDesk Services hypothetical company logo" loading="lazy"
+                            src="assets/partner-logos/primedesk-services.svg" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-label">
+                    CONTACT
+                </span>
+                <h2>
+                    Connect With the Portal
+                </h2>
+            </div>
+            <div class="contact-form-grid">
+                <div class="contact-details-panel">
+                    <h3>
+                        Support Desk
+                    </h3>
+                    <p>
+                        Reach out for candidate support, training coordination, or institutional queries.
+                    </p>
+                    <div class="helpline-number">
+                        <span>☎</span>
+                        +91 9767830700
+                    </div>
+                    <div class="contact-list">
+                        <div>Email: projectphoenix56@gmail.com </div>
+                        <div>Office: Legal Aid Clinic, Maharashtra National Law University, Nagpur</div>
+                        <div>Hours: Mon - Sat, 9:00 AM - 6:00 PM</div>
+                    </div>
+                </div>
+                <div class="contact-form-panel">
+                    <h3>
+                        Send a Message
+                    </h3>
+                    <form class="contact-form" id="homepageContactForm">
+                        <div class="full">
+                            <label for="homepageContactName">Full Name</label>
+                            <input id="homepageContactName" autocomplete="name" placeholder="Enter your name" type="text" required />
+                        </div>
+                        <div>
+                            <label for="homepageContactEmail">Email</label>
+                            <input id="homepageContactEmail" autocomplete="email" placeholder="Enter email" type="email" required />
+                        </div>
+                        <div>
+                            <label for="homepageContactPhone">Phone</label>
+                            <input id="homepageContactPhone" autocomplete="tel" placeholder="Enter phone number" type="tel" required />
+                        </div>
+                        <div class="full">
+                            <label for="homepageContactMessage">Message</label>
+                            <textarea id="homepageContactMessage" placeholder="How can we help?" required></textarea>
+                        </div>
+                        <div class="full">
+                            <button class="contact-submit" type="submit">Send Enquiry</button>
+                            <p class="contact-status" id="homepageContactStatus" role="status" aria-live="polite"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container footer-main">
+            <div class="footer-brand">
+                <img class="footer-brand-logo" src="phoenix-logo(1).png" alt="PHOENIX logo" />
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Quick Links</h4>
+                    <a href="#about">About</a>
+                    <a href="#courses">Courses</a>
+                    <a href="#career">Career</a>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <a href="juvenile-login.html" rel="noopener" target="_blank">Open Participant Portal →</a>
+                    <a href="#stakeholder">Stakeholders</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2026 Juvenile Skill &amp; Employment Linkage Portal</p>
+                <p>Designed for rehabilitation, legal support and vocational development</p>
+            </div>
+        </div>
+    </footer>
+    </main>
+    <script defer="True" src="script.js">
+    </script>
+    <script defer src="language.js"></script>
+</body>
+
+</html>
